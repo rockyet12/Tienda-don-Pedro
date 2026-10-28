@@ -34,7 +34,7 @@ namespace Tienda_don_Pedro.Controllers
         public async Task<ActionResult<ProductoDto>> Post([FromBody] CrearProductoDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var producto = await _service.Cr Crear(dto);
+            var producto = await _service.Crear(dto);
             return CreatedAtAction(nameof(Get), new { id = producto.Id }, producto);
         }
 
